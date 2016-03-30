@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/29 14:39:35 by rle-mino          #+#    #+#              #
-#    Updated: 2016/03/29 18:54:27 by rle-mino         ###   ########.fr        #
+#    Updated: 2016/03/30 20:35:16 by rle-mino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ NAME	=	push_swap
 
 SRC		=	main.c				\
 			ps_parsing.c		\
+			stack_to_mem.c		\
 			ps_error.c			\
+			move.c				\
+			move2.c				\
+			move3.c				\
+			move4.c				\
 
 DOTO	=	$(SRC:.c=.o)
 

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_error.c                                         :+:      :+:    :+:   */
+/*   stack_to_mem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/29 14:48:27 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/03/30 00:34:43 by rle-mino         ###   ########.fr       */
+/*   Created: 2016/03/30 11:03:52 by rle-mino          #+#    #+#             */
+/*   Updated: 2016/03/30 11:13:29 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "puswap.h"
 
-int		ps_error(void)
+char		**stack_to_mem(char **av, int ac)
 {
-	ft_putendl_fd("error", 2);
-	exit(EXIT_FAILURE);
-	return (0);
+	char	**arg;
+	int		i;
+
+	i = 1;
+	if (!(arg = (char **)ft_memalloc(sizeof(char *) * ac)))
+		return (NULL);
+	while (av[i])
+	{
+		arg[i - 1] = ft_strdup(av[i]);
+		i++;
+	}
+	arg[i - 1] = NULL;
+	return (arg);
 }

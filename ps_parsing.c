@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 15:06:54 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/03/29 19:25:57 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/03/30 11:16:37 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ int		ps_legit(char *nb)
 {
 	int		i;
 
-	i = -1;
+	i = 0;
 	if (nb[0] == '-')
 		i++;
-	while (nb[++i])
+	if (nb[0] == '-' && !nb[1])
+		return (0);
+	while (nb[i])
+	{
 		if (!ft_isdigit(nb[i]))
 			return (0);
+		i++;
+	}
 	if (i > 11 || (i > 10 && nb[0] != '-'))
 		return (0);
-	if (i == 10 && ft_atoi(nb) <= 0)
+	if (i == 10 && nb[0] != '-' && ft_atoi(nb) <= 0)
 		return (0);
 	if (i == 11 && ft_atoi(nb) >= 0)
 		return (0);
