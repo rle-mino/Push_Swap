@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/29 14:49:46 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/03/30 21:16:10 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/03/31 16:29:22 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void		push_rr(int **a, int **b, int *count);
 void		push_rra(int **a, int **b, int *count);
 void		push_rrb(int **a, int **b, int *count);
 void		push_rrr(int **a, int **b, int *count);
+void		ps_algo(int *a, int *b, int *count);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 18:12:51 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/03/30 20:34:50 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/04/01 00:35:42 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ void		push_rra(int **a, int **b, int *count)
 {
 	int		*tmp;
 	int		*free_me;
-	int		i;
 	int		j;
 
 	(void)b;
 	tmp = ft_memalloc(sizeof(int) * count[0]);
-	j = -1;
-	i = count[0];
+	j = 0;
+	tmp[0] = (*a)[count[0] - 1];
 	while (++j < count[0])
-		tmp[j] = (*a)[--i];
+		tmp[j] = (*a)[j - 1];
 	free_me = *a;
 	*a = tmp;
 	free(free_me);
@@ -34,15 +33,14 @@ void		push_rrb(int **a, int **b, int *count)
 {
 	int		*tmp;
 	int		*free_me;
-	int		i;
 	int		j;
 
 	(void)a;
 	tmp = ft_memalloc(sizeof(int) * count[1]);
-	j = -1;
-	i = count[1];
+	j = 0;
+	tmp[0] = (*b)[count[1] - 1];
 	while (++j < count[1])
-		tmp[j] = (*b)[--i];
+		tmp[j] = (*b)[j - 1];
 	free_me = *b;
 	*b = tmp;
 	free(free_me);
