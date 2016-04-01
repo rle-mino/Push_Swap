@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/29 14:39:35 by rle-mino          #+#    #+#              #
-#    Updated: 2016/04/01 19:13:42 by rle-mino         ###   ########.fr        #
+#    Updated: 2016/04/02 00:55:52 by rle-mino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC		=	main.c				\
 
 DOTO	=	$(SRC:.c=.o)
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -g3 -Wall -Wextra -Werror
 
 .PHONY: all, clean, fclean, re
 

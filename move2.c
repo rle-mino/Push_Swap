@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 11:29:58 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/03/30 18:59:34 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/04/02 01:16:04 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		push_pa(int **a, int **b, int *count)
 	if (count[1] < 1)
 		return ;
 	tmp = ft_memalloc(sizeof(int) * (count[0] + 1));
-	tmp[0] = *b[0];
+	tmp[0] = (*b)[0];
 	while (++i < count[0] + 1)
 		tmp[i + 1] = (*a)[i];
 	free_me = *a;
@@ -49,12 +49,13 @@ void		push_pb(int **a, int **b, int *count)
 	if (count[0] < 1)
 		return ;
 	tmp = ft_memalloc(sizeof(int) * (count[1] + 1));
-	tmp[0] = *a[0];
-	while (++i < count[1] + 1)
+	tmp[0] = (*a)[0];
+	while (++i < count[1] + 1 && *b)
 		tmp[i + 1] = (*b)[i];
 	free_me = *b;
 	*b = tmp;
-	free(free_me);
+	if (free_me)
+		free(free_me);
 	count[1]++;
 	tmp = ft_memalloc(sizeof(int) * (count[0] - 1));
 	i = -1;
