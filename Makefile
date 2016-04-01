@@ -6,7 +6,7 @@
 #    By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/29 14:39:35 by rle-mino          #+#    #+#              #
-#    Updated: 2016/03/30 20:35:16 by rle-mino         ###   ########.fr        #
+#    Updated: 2016/04/01 19:13:42 by rle-mino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ SRC		=	main.c				\
 			move2.c				\
 			move3.c				\
 			move4.c				\
+			ps_check.c			\
+			add_move.c			\
+			ps_rotate.c			\
+			ps_algo.c			\
 
 DOTO	=	$(SRC:.c=.o)
 

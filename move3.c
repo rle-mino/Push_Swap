@@ -6,7 +6,7 @@
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/30 17:46:14 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/04/01 00:35:32 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/04/01 00:40:28 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		push_rb(int **a, int **b, int *count)
 	free(free_me);
 }
 
-void	push_rr(int **a, int **b, int *count)
+void		push_rr(int **a, int **b, int *count)
 {
 	push_ra(a, b, count);
 	push_rb(a, b, count);

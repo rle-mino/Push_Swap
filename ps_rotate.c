@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_algo.c                                          :+:      :+:    :+:   */
+/*   ps_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-mino <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/03/31 18:02:15 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/04/01 19:27:58 by rle-mino         ###   ########.fr       */
+/*   Created: 2016/04/01 18:10:02 by rle-mino          #+#    #+#             */
+/*   Updated: 2016/04/01 19:26:51 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "puswap.h"
 
-void		ps_algo(int *a, int *b, int *count)
+void		full_rotate(int *a, int *count, char **result)
 {
-	char	*result;
+	int	ref;
+	int	i;
 
-	(void)b;
-	result = ft_memalloc(1);
-	if (check_rotate(a, count))
+	i = 1;
+	ref = a[0];
+	while (ref < a[i])
 	{
-		full_rotate(a, count, &result);
-		fpf("%s\n", result);
-		return ;
+		ref = a[i];
+		i++;
 	}
-	while (!check(a, count))
-	{
-		return ;
-	}
+	if (count[0] / i < count[0] / 2)
+		while (!check(a, count))
+		{
+			push_rra(&a, NULL, count);
+			add_move(result, P_RRA);
+		}
+	else
+		while (!check(a, count))
+		{
+			push_ra(&a, NULL, count);
+			add_move(result, P_RA);
+		}
 }
